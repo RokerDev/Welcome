@@ -10,6 +10,9 @@ namespace Welcome
     {
         static void Main(string[] args)
         {
+            var welcome = new WelcomeApp();
+            welcome.ShowResult();
+            Console.ReadLine();
         }
     }
 }

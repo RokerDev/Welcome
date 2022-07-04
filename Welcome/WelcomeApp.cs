@@ -4,11 +4,11 @@ namespace Welcome
 {
     internal class WelcomeApp
     {
-        private string name;
-        private string city;
-        private int year;
-        private int month;
-        private int day;
+        private string _name;
+        private string _city;
+        private int _year;
+        private int _month;
+        private int _day;
 
         public WelcomeApp()
         {
@@ -18,20 +18,20 @@ namespace Welcome
         private void GetData()
         {
             Console.WriteLine("Please type your name:");
-            name = Console.ReadLine();
+            _name = Console.ReadLine();
             Console.WriteLine("Please type your city:");
-            city = Console.ReadLine();
+            _city = Console.ReadLine();
             Console.WriteLine("Please type year of your birthday:");
-            year = GetYear();
+            _year = GetYear();
             Console.WriteLine("Please type month of your birthday:");
-            month = GetMonth();
+            _month = GetMonth();
             Console.WriteLine("Please type day of your birthday:");
-            day = GetDay();
+            _day = GetDay();
         }
 
         private int CalculateAge()
         {
-            var date = new DateTime(year, month, day);
+            var date = new DateTime(_year, _month, _day);
             var today = DateTime.Now;
             var userAge = today.Year - date.Year;
             if (today.DayOfYear < date.DayOfYear)
@@ -123,8 +123,8 @@ namespace Welcome
 
         public void ShowResult()
         {
-            Console.WriteLine($"Your name is {char.ToUpper(name[0]) + name.Substring(1)}.\n" +
-                $"You was born in {city}\n" +
+            Console.WriteLine($"Your name is {char.ToUpper(_name[0]) + _name.Substring(1)}.\n" +
+                $"You was born in {_city}\n" +
                 $"and you are {CalculateAge()} old.");
 
         }

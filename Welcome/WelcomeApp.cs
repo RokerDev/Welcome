@@ -36,7 +36,7 @@ namespace Welcome
             var userAge = today.Year - date.Year;
             if (today.DayOfYear < date.DayOfYear)
             {
-                userAge -= 1;
+                userAge --;
             }
             else if (today.DayOfYear == date.DayOfYear)
             {
